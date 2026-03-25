@@ -2,7 +2,7 @@ pipeline {
     agent any
 
     environment {
-        EC2_HOST = "ubuntu@13.48.178.159"
+        EC2_HOST = "ubuntu@16.171.54.151"
     }
 
     stages {
@@ -22,7 +22,7 @@ pipeline {
             steps {
                 sshagent(['ec2-ssh-key']) {
                     sh '''
-                    scp -o StrictHostKeyChecking=no -r . ubuntu@13.48.178.159:/home/ubuntu/app
+                    scp -o StrictHostKeyChecking=no -r . ubuntu@16.171.54.151:/home/ubuntu/app
                     '''
                 }
             }
